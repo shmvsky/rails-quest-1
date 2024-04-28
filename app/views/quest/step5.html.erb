@@ -1,0 +1,45 @@
+<div class="container">
+<h1>Теперь совсем самостоятельно &#128552;</h1>
+  
+<p class="text-block">
+Пришла пора действовать решительно.
+Сделай route <code>POST '/final'</code>, который свяжется с соответсвующим методом <code>QuestController</code>
+</p>
+  
+<p class="text-block">
+Найди файл, в котором сверстана эта страница.
+</p>
+  
+<p class="text-block">
+Сверстай на этой странице форму, которая отправит POST на '/final' и передаст объект <code>version</code> с параметрами <code>major</code>, <code>minor</code>,
+ и <code>patch</code>. За основу возьми форму с шага 3.
+</p>
+
+    
+<p class="text-block">
+Настрой фильтрацию параметров, реализовав функцию <code>version_params</code>.
+</p>
+  
+    
+<p class="text-block">
+Введи в качестве ответа версию Rails, которая использована в этом задании, разбив ее на 3 соответствующих компонента.
+</p>
+
+<%= form_tag('/final') do -%>
+   <div class='form-field'>
+      <%=label_tag 'major', 'Мажор' %>
+     <%=text_field_tag 'version[major]'%>
+   </div>
+   <div class='form-field'>
+     <%=label_tag 'minor', 'Минор' %>
+     <%=text_field_tag 'version[minor]'%>
+	</div>
+	<div class='form-field'>
+     <%=label_tag 'patch', 'Патч' %>
+     <%=text_field_tag 'version[patch]'%>
+	</div>
+  <div class='form-field'>
+    <%= submit_tag 'Отправить' %>
+  </div>
+<% end -%>
+</div>

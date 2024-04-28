@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Опять кпопка</h1>
+<p class="text-block">
+Кнопка устроена как в первом задании, но делает GET-запрос на <code>/quest/step5 </code>
+Сначала разберись с роутингом.
+</p>
+
+
+<%= button_to 'Вот эта кнопка', '/quest/step5', method: :get %>
+
+<p class="text-block">
+К сожалению, кнопка не заработает. Кто-то устроил в приложении маленький callback hell &#128122; и выставляет значение переменной <code>@forbidden</code> равным <code>true</code>. Почитай про <a href="https://guides.rubyonrails.org/action_controller_overview.html#filters">фильтры</a> и найди помеху. 
+  Не нужно сносить фильтр целиком, просто выставь <code>@forbidden=false</code>
+  
+</p>
+</div>
+

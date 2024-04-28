@@ -1,0 +1,35 @@
+<div class="container">
+<h1>3/5!</h1>
+<p class="text-block">
+В этот раз форма отправляет два параметра. В контроллере реализована техника <a href="https://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters">strong_params</a>.
+</p>
+<p class="text-block">
+Это значит, что перед обработкой параметры фильтруются. Ведь никогда нельзя знать, что именно тебе пришлют из Интернета.
+</p>
+<p class="text-block">
+В контроллере указано, что в параметрах должен быть объект <code>answer</code>, в котором разрешено поле <code>number</code>.
+  Разрешите контроллеру принимать второй параметр, <code>color</code>, чтобы пройти дальше.
+</p>
+
+<%= form_tag('/step4') do -%>
+  
+   <div class='form-field'>
+      <%=label_tag 'number', 'Номер' %>
+     <%=text_field_tag 'answer[number]'%>
+   </div>
+   <div class='form-field'>
+     <%=label_tag 'color', 'Цвет' %>
+     <%=text_field_tag 'answer[color]'%>
+     </div>
+  <div class='form-field'>
+    <%= submit_tag 'Отправить' %>
+  </div>
+<% end -%>
+  
+  <p class="text-block">
+Действуем как обычно: вписываем нужный route, а затем редактируем функцию <code>answer_params</code> так, чтобы она пропустила параметр color.
+  </p>
+
+
+</div>
+
